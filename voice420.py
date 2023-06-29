@@ -165,8 +165,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('jarvisxyz123@gmail.com', 'coco@2022')
-    server.sendmail('jarvisxyz123@gmail.com', to, content)
+    server.login('yourmail', 'yourpass')
+    server.sendmail('yourmail', to, content)
     server.close()
 
 def chatgpt_voice_assistant(api_key):
@@ -207,38 +207,21 @@ def chatgpt_voice_assistant(api_key):
     engine.say(ai_response)
     engine.runAndWait()
 
-def whatsapp():  # this is fun part of it and i complete your take call api and do things.
-    # but i think so this is no what i am saying it's web scraping
-    driver = webdriver.Chrome('C:\\Users\\praja\\OneDrive\\Documents\\python cwh\\chromedriver.exe')
-    driver.get("https://web.whatsapp.com/")
-    time.sleep(3)
-    driver.maximize_window()
-    driver.implicitly_wait(50)
-    id = driver.find_element("xpath", '//*[@id="loginForm"]/div/div[1]/div/label/input')
-    id.send_keys('rudra_prajapati.007')
-    time.sleep(3)
 
-    passwd = driver.find_element("xpath", '//*[@id="loginForm"]/div/div[2]/div/label/input')
-    passwd.send_keys('jarvis1122')
 
-    login = driver.find_element("xpath", '//*[@id="loginForm"]/div/div[3]')
-    login.click()
-
-    time.sleep(10)
-
-def instagram():  # this is fun part of it and i complete your take call api and do things.
-    # but i think so this is no what i am saying it's web scraping
-    driver = webdriver.Chrome('C:\\Users\\praja\\OneDrive\\Documents\\python cwh\\chromedriver.exe')
+def instagram(): 
+    #instagram web scraping
+    driver = webdriver.Chrome('your webdriver path')
     driver.get("https://www.instagram.com/")
     time.sleep(3)
     driver.maximize_window()
     driver.implicitly_wait(50)
     id = driver.find_element("xpath", '//*[@id="loginForm"]/div/div[1]/div/label/input')
-    id.send_keys('jarvis.project')
+    id.send_keys('your id')
     time.sleep(3)
 
     passwd = driver.find_element("xpath", '//*[@id="loginForm"]/div/div[2]/div/label/input')
-    passwd.send_keys('jarvis1122')
+    passwd.send_keys('your password')
 
     login = driver.find_element("xpath", '//*[@id="loginForm"]/div/div[3]')
     login.click()
@@ -246,11 +229,11 @@ def instagram():  # this is fun part of it and i complete your take call api and
     time.sleep(10)
 
 def result():
-    driver= webdriver.Chrome('C:\\Users\\praja\\OneDrive\\Documents\\python cwh\\chromedriver.exe')
+    driver= webdriver.Chrome('your webdriver path')
     driver.get("https://www.gtu.ac.in/result.aspx")
     driver.maximize_window()
     driver.implicitly_wait(50)
-    if driver.find_element("xpath",'//*[@id="result1"]/h6/li[1]/div/div[1]/div/div[2]/h3/a'):
+    if driver.find_element("xpath",'//*[@id="result1"]/h6/li[1]/div/div[1]/div/div[2]/h3/a'): 
         speak("ohh result is out. let's check it!!")
         result = driver.find_element("xpath",'//*[@id="result1"]/h6/li[1]/div/div[1]/div/div[2]/h3/a')
         result.click()
@@ -264,7 +247,7 @@ def result():
     else:
        result()
 def youtube():
-    driver= webdriver.Chrome('C:\\Users\\praja\\OneDrive\\Documents\\python cwh\\chromedriver.exe')
+    driver= webdriver.Chrome('your webdriver path') 
     driver.get("https://youtube.com")
     driver.maximize_window()
     driver.implicitly_wait(100000)
@@ -353,7 +336,7 @@ while True:
             speak("How are you, Sir")
     elif 'chat gpt' in query:
             speak ("what you want to saerch")
-            api_key = "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"
+            api_key = "Your openai api key"
             chatgpt_voice_assistant(api_key) 
     elif 'fine' in query or "good" in query:
             speak("It's good to know that your fine")
@@ -361,7 +344,7 @@ while True:
             speak("If you talk then definitely your human.")
     elif 'ppt' in query:
             speak("opening Power Point presentation")
-            power = r"C:\\Users\\praja\\OneDrive\\Documents\\python projects\\"
+            power = r"C:\\Users\\praja\\OneDrive\\Documents\\python projects\\" 
             os.startfile(power)
     elif 'lock window' in query:
             speak("locking the device")
